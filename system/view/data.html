@@ -1,0 +1,70 @@
+<div class="data-all">
+	<div class="data">
+		<div class="data-head">
+			<h2 class="text-center">后台数据报表</h2>
+		</div>
+		<div class="data-operat">
+			<div class="time-operat">
+				<div class="time-head">按时间搜索:</div>
+				<div class="data-time">
+					<mb-datepicker 
+						element-id='starttime'
+				       	input-class="testClass"
+				       	date="starttime"
+				       	date-format="YYYY-MM-DD"
+					   	placeholder="请输入开始时间"
+					   	class="time-input-start">
+					</mb-datepicker>
+					<mb-datepicker 
+						element-id='endtime'
+				       	input-class="testClass"
+				       	date="endtime"
+				       	date-format="YYYY-MM-DD"
+					   	placeholder="请输入结束时间"
+					   	class="time-input-end">
+					</mb-datepicker>
+					<div class="time-submit">
+						<button class="btn btn-sm btn-default">搜索</button>
+						<button class="btn btn-sm btn-default">导出</button>
+					</div>
+				</div>
+			</div>
+			<div class="input-group data-search">
+				<div class="input-group-addon">全局搜索</div>
+				<input type="text" class="form-control" ng-model="search_con">
+			</div>
+		</div>
+		<div class="data-row table-responsive" ng-controller="TableData">
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th ng-repeat="th in ths">{{th.label}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items | filter:search_con | orderBy:order" >
+						<th>{{item.name}}</th>
+						<th>{{item.no}}</th>
+						<th>{{item.grade}}</th>
+						<th>{{item.tel}}</th>
+						<th>{{item.tecent}}</th>
+						<th>{{item.room}}</th>
+						<th>{{item.reason}}</th>
+						<th>{{item.detail}}</th>
+						<th>
+							<a href="javascripr:void(0)">点击查看</a>
+						</th>
+						<th>{{item.more}}</th>
+						<th>{{item.time}}</th>
+						<th>
+							<a href="javascripr:void(0)" ng-if="open">指派</a>
+							<a href="javascripr:void(0)">接单</a>
+							<a href="javascripr:void(0)">删除</a>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="data-operat"></div>
+	</div>
+</div>

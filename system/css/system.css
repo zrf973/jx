@@ -1,0 +1,88 @@
+body{
+	background-color: #f5f5f5;
+}
+.all{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+}
+.nav{
+	background-color: #2D3035;
+	border-bottom: 1px solid #CCC;
+	width: 100%;
+}
+.nav a{
+	color: #CCC;
+	font-size: 16px;
+}
+.nav a:hover,.nav a:visited{
+	text-decoration: none;
+	color: #FFF;
+}
+.logo{
+	float: left;
+}
+.logo-pic{
+	width: 75px;
+	height: 30px;
+	margin:5px 0;
+}
+.logo-link{
+	margin-left: 10px;
+}
+.nav-menu{
+	float: right;
+}
+.nav-menu a{
+	display: inline-block;
+	margin-top:8px;
+	margin-left:1px;
+}
+.data-all{
+	width: 100%;
+	margin:50px auto 0 auto;
+}
+.data{
+	width: 1200px;
+	margin: 0 auto;
+	height: auto;
+}
+.table>tbody>tr>th,.table>thead>tr>th{
+	font-size: 14px;
+}
+th{
+	text-align: center;
+}
+.data-operat{
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height: 30px;
+	margin-bottom:20px;
+	margin-top: 20px;
+}
+.data-search{
+	width: 300px;
+	right: 0px;
+	position: absolute;
+	left: 0;
+}
+.time-input-start,.time-head,.time-submit{
+	position: absolute;
+}
+.time-input-start{
+	right: 300px;;
+}
+.time-head{
+	right:480px;
+	line-height: 30px;
+}
+.time-input-end{
+	position: absolute;
+	right: 110px;
+}
+.time-submit{
+	top: 2px;
+	right: 0px;
+}

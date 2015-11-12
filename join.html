@@ -1,0 +1,94 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="keywords" content="白云学院 , 白云工商技师, 白云工商, 计算机协会, 白云东区计协, 白云学院计算机协会">
+	<title>加入我们</title>
+	<link href="favicon.ico" rel="shortcut icon"/>
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style type="text/css">
+		.can{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.drop,.lar{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 250px;
+			height: 20px;
+			margin-top: -10px;
+			margin-left:-125px;
+		}
+		.drop{
+			width: 5px;
+		}
+		.fast{
+			
+		}
+	</style>
+
+<script>
+$(function(){
+		setTimeout(function(){
+			$(".lar").eq(0).removeClass("tran_right");
+		},1200);
+		setTimeout(function(){
+			$(".lar").eq(1).removeClass("tran_left");
+			$(".drop").removeClass("margin-left")
+		},1800);
+		setTimeout(function(){
+			$(".lar").eq(2).removeClass("tran_right");
+		},2400);
+		setTimeout(function(){
+			$(".lar").eq(3).removeClass("tran_left");
+		},3000);
+		setTimeout(function(){
+			$(".boy").slideDown();
+		},4500);
+		$(".boy").click(function(){
+			$(".code-code").slideDown();
+			$(".code-code").click(function(){
+				$(this).slideUp();
+			})
+		})
+})
+</script>
+<!-- bydqjx.com Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?0889c0a15bef2cc5e557103b43fd19aa";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+	<div class="content">
+		<div class="can">
+			<span class="lar tran_right cubic_sma" style="margin-top: 100px;">你会设计?</span>
+			<span class="lar tran_left cubic_sma" style="margin-top:105px;margin-left:-10px">喜欢策划联谊不搞基?</span>
+			<span class="lar tran_right cubic_sma" style="margin-top: 155px;"><i>想学技术一起飞？</i></span>
+			<span class="lar tran_left cubic_sma" style="margin-top: 185px;margin-left: -75px;">告诉我们你的特长</span>
+			<a href="javascript:void(0)" class="lar boy" style="margin-top: 215px;display: inline-block;color: #FFF;background: #33CCFF;text-align: center;width:150px;padding: 10px 15px;margin-left: -95px;border-radius: 8px;display: none;">并发挥你的特长</a>
+			<span class="drop left mid margin-left linear_spe" style="margin-top: 100px;margin-left: -150px;">上女生宿舍</span>
+			<span class="drop margin-left linear_spec" style="margin-top: 5px;margin-left: -95px;">1024？？</span>
+			<span class="drop margin-left linear_spe" style="margin:20px 0 0 50px; ">强行装逼</span>
+			<span class="drop margin-left linear_spe" style="margin:300px 0 0 -75px;">我就问你约不约</span>
+			<span class="drop mid margin-left linear_spec" style="margin:300px 0 0 30px;">你得知道什么叫基情</span>
+			<span class="drop mid margin-left linear_spe" style="margin:320px 0 0 -150px;">享受被磨的滋味</span>
+			<span class="drop margin-left linear_spec" style="margin:250px 0 0 90px;">公费吃喝</span>
+			<span class="drop margin-left linear_spec" style="margin:360px 0 0 120px;">一大波女生正在接近</span>
+		</div>
+	</div>
+	<div class="dialog code-code" style="display: none;">
+		<img src="image/15.jpg" style="height: 274px;width:200px;position: absolute;top: 50%;left: 50%;margin-top: -135px;margin-left: -100px;"/>
+	</div>
+</body>
+</html>
