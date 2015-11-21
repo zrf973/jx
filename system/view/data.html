@@ -1,4 +1,4 @@
-<div class="data-all">
+<div class="data-all" ng-controller="TableData">
 	<div class="data">
 		<div class="data-head">
 			<h2 class="text-center">后台数据报表</h2>
@@ -8,23 +8,23 @@
 				<div class="time-head">按时间搜索:</div>
 				<div class="data-time">
 					<mb-datepicker 
-						element-id='starttime'
+						element-id='startTime'
 				       	input-class="testClass"
-				       	date="starttime"
+				       	date="startTime"
 				       	date-format="YYYY-MM-DD"
 					   	placeholder="请输入开始时间"
 					   	class="time-input-start">
 					</mb-datepicker>
 					<mb-datepicker 
-						element-id='endtime'
+						element-id='endTime'
 				       	input-class="testClass"
-				       	date="endtime"
+				       	date="endTime"
 				       	date-format="YYYY-MM-DD"
 					   	placeholder="请输入结束时间"
 					   	class="time-input-end">
 					</mb-datepicker>
 					<div class="time-submit">
-						<button class="btn btn-sm btn-default">搜索</button>
+						<button class="btn btn-sm btn-default" ng-click="Search()">搜索</button>
 						<button class="btn btn-sm btn-default">导出</button>
 					</div>
 				</div>
@@ -34,7 +34,7 @@
 				<input type="text" class="form-control" ng-model="search_con">
 			</div>
 		</div>
-		<div class="data-row table-responsive" ng-controller="TableData">
+		<div class="data-row table-responsive">
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
@@ -64,7 +64,10 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="col-md-12 text-center page">
+				<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" ng-if="items"></uib-pagination>
+			</div>
 		</div>
-		<div class="data-operat"></div>
+		<div class="data-operat"></div> 
 	</div>
 </div>
