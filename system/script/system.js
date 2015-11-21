@@ -1,5 +1,29 @@
 var app = angular.module("app",['materialDatePicker','ui.bootstrap','ngAnimate']);
 
+app.directive('viewoption',function (){
+	return{
+		restrict:'AE',
+		scope:'',
+		templateUrl:'view/option.html',
+		controller:function ($scope,$http){
+			var fontOption = function (){
+				if($scope.viewJudge){
+					$scope.allOption = "查看全部";
+				}else{
+					$scope.allOption = "收起全部";
+				}
+			};
+			$scope.viewJudge = true;
+			fontOption();
+			$scope.optionView = function (){
+				$scope.option = !$scope.option;
+				$scope.viewJudge = !$scope.viewJudge;
+				fontOption();
+			}
+		}
+	}
+})
+
 app.controller('TableData',TableData);
 
 TableData.$inject = ['$scope','$http'];
@@ -12,7 +36,7 @@ function TableData($scope,$http){
 		$scope.bigCurrentPage = currentPage;
 		$scope.bigTotalItems = TotalItems;
 	};
-	//表单检测
+	//表单检测,页数显示
 	var isOk = {
 		isBlank : function (startTime,endTime){
 			if(startTime == '' || endTime == "") {
@@ -30,8 +54,32 @@ function TableData($scope,$http){
 					return false;
 				}
 			}
+		},
+		isPage : function (judge){
+			$scope.pageShow = judge;
 		}
-	}
+	};
+	// 初始化数据 包括接受数据和其它设置
+	$scope.onload = function (){
+		isOk.isPage(true);
+		$scope.option = true;
+		$scope.viewNum = 3;
+	};
+	$scope.onload();
+	$scope.searchType = "currentType";
+	$scope.types = [
+		{label:'全局搜索',name:'allType'},{label:'当前搜索',name:'currentType'}
+	];
+	// 搜索类型事件
+	$scope.typeChange = function (searchType){
+		console.log(searchType);
+		if(searchType == "allType"){
+			isOk.isPage(false);
+			console.log($scope.pageShow);
+		}else{
+			isOk.isPage(true);
+		};
+	};
 	// 搜索点击事件
 	$scope.Search = function (){
 	}
@@ -44,4 +92,4 @@ function TableData($scope,$http){
 		{name:'杨智',no:1321608108,grade:'搬砖大师',tel:13121608108,tecent:666666666,room:'B1109',reason:'比较机智',detail:'哟西',pic:'',more:'已接单',time:'2014-05-16'},
 	];
 	setPage(10,1,50);
-}
+};

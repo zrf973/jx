@@ -30,7 +30,9 @@
 				</div>
 			</div>
 			<div class="input-group data-search">
-				<div class="input-group-addon">全局搜索</div>
+				<div class="input-group-addon">
+					<select class="selType" ng-model="searchType" ng-options="type.name as type.label for type in types" ng-change="typeChange(searchType)"></select>
+				</div>
 				<input type="text" class="form-control" ng-model="search_con">
 			</div>
 		</div>
@@ -42,7 +44,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="item in items | filter:search_con | orderBy:order" >
+					<tr ng-repeat="item in items | filter:search_con | orderBy:order " >
 						<th>{{item.name}}</th>
 						<th>{{item.no}}</th>
 						<th>{{item.grade}}</th>
@@ -65,8 +67,9 @@
 				</tbody>
 			</table>
 			<div class="col-md-12 text-center page">
-				<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" ng-if="items"></uib-pagination>
+				<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" ng-show="pageShow"></uib-pagination>
 			</div>
+			<viewoption ng-hide="pageShow"></viewoption>
 		</div>
 		<div class="data-operat"></div> 
 	</div>

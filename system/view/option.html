@@ -1,0 +1,6 @@
+<div class="col-md-12 text-center">
+	<span>
+		<button class="btn btn-sm" ng-class="{true:'btn-default',false:'btn-primary'}[option]" ng-click="option = !option">查看更多</button>
+		<button class="btn btn-sm" ng-class="{true:'btn-primary',false:'btn-default'}[option]"  ng-disabled="isOVer"  ng-click="optionView()">{{allOption}}</button>
+	</span>
+</div>

@@ -87,3 +87,11 @@ th{
 	top: 2px;
 	right: 0px;
 }
+.selType{
+	border: 0;
+	background-color:#eee; 	
+}
+.input-group-addon{
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
