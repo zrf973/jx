@@ -1,11 +1,14 @@
 var app = angular.module("app",['materialDatePicker','ui.bootstrap','ngAnimate']);
 
+// 查看选项按钮
 app.directive('viewoption',function (){
 	return{
 		restrict:'AE',
 		scope:'',
+		img:'=imgs'
 		templateUrl:'view/option.html',
 		controller:function ($scope,$http){
+			// 查看全部按钮字体设置
 			var fontOption = function (){
 				if($scope.viewJudge){
 					$scope.allOption = "查看全部";
@@ -22,7 +25,19 @@ app.directive('viewoption',function (){
 			}
 		}
 	}
-})
+});
+
+// 点击看大图
+app.directive('bigpic',function (){
+	return {
+		restrict:'AE',
+		scope:'',
+		templateUrl:'view/pic.html',
+		controller:function ($scope,$http){
+
+		}
+	}
+});
 
 app.controller('TableData',TableData);
 
@@ -92,4 +107,7 @@ function TableData($scope,$http){
 		{name:'杨智',no:1321608108,grade:'搬砖大师',tel:13121608108,tecent:666666666,room:'B1109',reason:'比较机智',detail:'哟西',pic:'',more:'已接单',time:'2014-05-16'},
 	];
 	setPage(10,1,50);
+	$scope.imgs = [
+		{src:'http://dwz.cn/2diEmJ'},{src:'http://dwz.cn/2diEmJ'}
+	]
 };
