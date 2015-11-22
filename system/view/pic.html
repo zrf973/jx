@@ -4,8 +4,8 @@
 		<ul class="img-box">
 			<li ng-repeat="img in imgs">
 				<i class="left-box ori"></i>
-				<img ng-src="img.src" />
-				<i class="right-box ori"></i>
+				<img ng-src="{{img.src}}" ng-mouseover="getIndex($index)" ng-model="imgSrc" class="imgShow"/>
+				<i class="right-box ori" ng-click="next(img.$index)"></i>
 			</li>
 		</ul>
 	</div>

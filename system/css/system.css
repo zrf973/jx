@@ -139,25 +139,44 @@ th{
 	-moz-transition:all 0.5s cubic-bezier(0.475, 0.685, 0.32, 1.275);
 	-o-transition:all 0.5s cubic-bezier(0.475, 0.685, 0.32, 1.275);
 }
-.img-box{
-	position: relative;
-	width: 600px;
-	padding: 20px;	
+.img-content{
 	position: absolute;
-	top: 50%;
-	margin-top: -30px;
+	top: 30%;
 	left: 50%;
 	margin-left: -300px;
-	background: #fff;
+	width: 600px;
+	overflow: hidden;
+}
+.img-box{
+	padding: 20px;	
+	width: 1300px;
+	position: relative;
+	top: 0;
+	left: 0;
+	transition:all 0.5s linear;
 }
 .ori{
 	width: 100px;
 	height: 100%;
 	position: absolute;
+	z-index: 999;
+	top:0;
 }
-.left-box{
-	left: 0;
+.left-box:hover{
+	cursor: w-resize;
 }
 .right-box{
 	right: 0;
+}
+.right-box:hover{
+	cursor: w-resize;
+}
+.img-box li{
+	width: 600px;
+	float: left;
+	list-style: none;
+	position: relative;
+}
+.img-box img{
+	width:100%;
 }

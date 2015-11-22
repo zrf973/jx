@@ -5,7 +5,7 @@ app.directive('viewoption',function (){
 	return{
 		restrict:'AE',
 		scope:'',
-		img:'=imgs'
+		imgs:'=imgs',
 		templateUrl:'view/option.html',
 		controller:function ($scope,$http){
 			// 查看全部按钮字体设置
@@ -22,7 +22,7 @@ app.directive('viewoption',function (){
 				$scope.option = !$scope.option;
 				$scope.viewJudge = !$scope.viewJudge;
 				fontOption();
-			}
+			};
 		}
 	}
 });
@@ -35,6 +35,11 @@ app.directive('bigpic',function (){
 		templateUrl:'view/pic.html',
 		controller:function ($scope,$http){
 
+		},
+		link:function (){
+			$(".left-box").click(function (){
+				console.log($(this).parent().index());
+			});
 		}
 	}
 });
