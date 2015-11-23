@@ -1,12 +1,14 @@
 <div class="pic">
-	<a href="javascript:void(0)" class="close"></a>
-	<div class="img-content">
-		<ul class="img-box">
-			<li ng-repeat="img in imgs">
-				<i class="left-box ori"></i>
-				<img ng-src="{{img.src}}" ng-mouseover="getIndex($index)" ng-model="imgSrc" class="imgShow"/>
-				<i class="right-box ori" ng-click="next(img.$index)"></i>
-			</li>
-		</ul>
-	</div>
+	<a href="javascript:void(0)" class="close" ng-click="imgHide()"></a>
+	<div class="imgContent">
+		<uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+	      <uib-slide ng-repeat="img in imgs" active="slide.active">
+	        <img  ng-src="{{img.src}}" class="imgBox">
+	       <!--  <div class="carousel-caption">
+	          <h4>Slide {{$index}}</h4>
+	          <p>{{slide.text}}</p>
+	        </div> -->
+	      </uib-slide>
+	    </uib-carousel>
+    </div>
 </div>

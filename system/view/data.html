@@ -1,5 +1,5 @@
 <div class="data-all" ng-controller="TableData">
-	<bigpic imgs="imgs"></bigpic>
+	<bigpic imgs="imgs" ng-show="imgShow"></bigpic>
 	<div class="data">
 		<div class="data-head">
 			<h2 class="text-center">后台数据报表</h2>
@@ -45,7 +45,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="item in items | filter:search_con | orderBy:order " >
+					<tr ng-repeat="item in items | filter:search_con | orderBy:order |limitTo: listNum" >
 						<th>{{item.name}}</th>
 						<th>{{item.no}}</th>
 						<th>{{item.grade}}</th>
@@ -55,7 +55,7 @@
 						<th>{{item.reason}}</th>
 						<th>{{item.detail}}</th>
 						<th>
-							<a href="javascripr:void(0)">点击查看</a>
+							<a href="javascripr:void(0)" ng-click="bigShow($index)">点击查看</a>
 						</th>
 						<th>{{item.more}}</th>
 						<th>{{item.time}}</th>

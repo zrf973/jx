@@ -34,12 +34,10 @@ app.directive('bigpic',function (){
 		scope:'',
 		templateUrl:'view/pic.html',
 		controller:function ($scope,$http){
-
-		},
-		link:function (){
-			$(".left-box").click(function (){
-				console.log($(this).parent().index());
-			});
+			$scope.imgHide = function (){
+				$scope.imgShow = false;
+				console.log($scope.imgShow);
+			}
 		}
 	}
 });
@@ -50,6 +48,11 @@ TableData.$inject = ['$scope','$http'];
 
 function TableData($scope,$http){
 	$scope.open = true;
+	$scope.listNum = 3;
+	$scope.bigShow = function (index){
+		$scope.imgShow = true;
+		console.log($scope.imgShow + index);
+	}
 	// 设置页数
 	var setPage = function (maxSize,currentPage,TotalItems){
 		$scope.maxSize = maxSize
@@ -113,6 +116,6 @@ function TableData($scope,$http){
 	];
 	setPage(10,1,50);
 	$scope.imgs = [
-		{src:'http://dwz.cn/2diEmJ'},{src:'http://dwz.cn/2diEmJ'}
-	]
+		{src:'http://dwz.cn/2diEmJ'},{src:'http://dwz.cn/2dIhDY'}
+	];
 };
